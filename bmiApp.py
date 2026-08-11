@@ -1,12 +1,12 @@
 import streamlis as st
 
 #ส่วนที่ 1 หัวข้อหน้าเว็บ (Title สีฟ้า)
-st.markdown("#: blue[ ค่านวณค่าดัชนีมวลกาย BMI]")
+st.markdown("# :blue[ ค่านวณค่าดัชนีมวลกาย BMI]")
 st.write("กรอกข้อมูลน้ำหนักและส่วนสูงของคุณ เพื่อเช็กสุขภาพเบื้องต้น")
 
 #ส่วนที่ 2 สร้างช่องรับค่าน้ำหนัก และ ส่วนสูง
-weight st.number input("กรอกนํ้าหนักของคุณ (กิโลกรัม):", min_value=1.0, value=1.0)
-height cm st.number input("กรอกส่วนสูงของคุณ (เซนติเมตร)", min_value=1.0, value-1.0)
+weight st.number_input("กรอกนํ้าหนักของคุณ (กิโลกรัม):", min_value=1.0, value=1.0)
+height cm st.number_input("กรอกส่วนสูงของคุณ (เซนติเมตร)", min_value=1.0, value-1.0)
 
 #ส่วนที่ 3 สร้างปุ่มกดค่านวณ
 if st.button("คำนวณค่า BMI "):
@@ -15,14 +15,14 @@ if st.button("คำนวณค่า BMI "):
   bmi = weight / (height_m ** 2)
 
   st.write("---")
-  st.header(f"ค่า BMI ของคุณคือ: *(bmi:.2f}*")
+  st.header(f"ค่า BMI ของคุณคือ: **(bmi:.2f}**")
 
 #ส่วนที่ 4 แปลผลค่า BMI ตามเกณฑ์
 if bmi < 18.5:
     st.warning(" คุณมีน้ำหนักน้อยกว่าเกณฑ์ (ผอม)")
 elif 18.5 <= bmi < 23.0:
     st.success(" คุณมีน้ำหนักอยู่ในเกณฑ์ปกติ (สุขภาพดี)")
-elif 23.0 < bmi < 25.0:
+elif 23.0 <= bmi < 25.0:
     st.info(" คุณเริ่มมีน้ำหนักเกินเกณฑ์ (ท่วม)")
 else:
     st.error(" คุณอยู่ในเกณฑ์อ้วน ควรระวังเรื่องสุขภาพและออกกำลังกาย")
