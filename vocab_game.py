@@ -28,8 +28,7 @@ def reset_game():
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
 def show_result_dialog(ans1, ans2):
-    show_result_dialog(ans3, ans4):
-    st.balloons()
+  st.balloons()
     score = 0
 
     u_ans1 = ans1.strip().lower()
@@ -132,8 +131,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2)
-    show_result_dialog(ans3, ans4)
+    show_result_dialog(ans1, ans2, ans3, ans4)
 
 st.divider()
 st.write("นายชนัญกร เจริญนันทพิวัฒน์ เลขที่ 40 ม.4/9")
